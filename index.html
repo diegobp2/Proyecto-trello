@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>TRELLO</title>
+</head>
+
+<body>
+    <header id="header-h">
+        <div class="presentacion">
+            <a href="#">
+                <img src="imagenes/trello.svg" alt="" id="img1">
+                <h1>TRELLO</h1>
+            </a>
+        </div>
+        <div class="perfil">
+            <label>
+                <img src="imagenes/menu.svg" alt="">
+                <input type="checkbox">
+            </label>
+            <div id="user-img">
+                <span class="nombreUser">Name person</span>
+                <img class="imgPerfil" src="./imagenes/user.svg" alt="" id="img-user">
+                <ul>
+                    <li id="lis-confi">CONFIGURACION</li>
+                    <li id="lis-out">SALIR</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="formularios" class="contenedor show-card">
+            <form id="iniciar_sesion" class="forms">
+                <h2>INICIAR SESION</h2>
+                <label for="email">Correo </label>
+                <input type="text" id="email" placeholder="INGRESE CORREO" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="INGRESE CONTRASEÑA" required>
+                <button id="btn_sesion" type="submit">iniciar sesion</button>
+                <div id="error" style="color: red;"></div>
+                <a href="#" id="linktoReg">NO TENGO CUENTA</a> <!-- Error message display -->
+            </form>
+            <form id="registrarse" class="forms">
+                <h2>REGISTRARSE</h2>
+                <label for="name_reg">Name</label>
+                <input type="text" id="name_reg" placeholder="INGRESE SU NOMBRE" required>
+                <label for="Apellido_reg">Apellido</label>
+                <input type="text" id="Apellido_reg" placeholder="INGRESE SU APELLIDO" required>
+                <label for="edad_reg">Edad</label>
+                <input type="number" id="edad_reg" placeholder="INGRESE SU EDAD" required>
+                <label for="email_reg">Correo</label>
+                <input type="text" id="email_reg" placeholder="INGRESE SU CORREO" required>
+                <label for="password_reg">Contraseña</label>
+                <input type="password" id="password_reg" placeholder="INGRESE SU CONTRASEÑA" required>
+                <label for="confirm">Confirmar Contraseña</label>
+                <input type="password" id="confirm" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                <button id="btn_reg" type="submit">Registrarse</button>
+                <div id="errorregis" style="color: white;"></div>
+                <a href="#" id="linktoLogin">YA TENGO CUENTA</a>
+            </form>
+            <form id="perfil" class="editarPerfil forms">
+                <h2 id="h2-perfil"></h2>
+                <div id="class-profile-img">
+                    <img class="imgPerfil" src="./imagenes/user.svg" id="change_img"></img>
+                </div>
+                <button type="button" id="btn_change" class="btn_perfiles">Cambiar foto</button>
+                <button type="button" id="btn_cancelar" class="btn_perfiles">Cancelar</button>
+                <button type="button" id="btn_guardar" class="btn_perfiles">Guardar</button>
+            </form>
+        </div>
+        <div id="cont-notes" class="cont-note ">
+            <form id="form-notes" class="form-note show-note">
+                <h2>Hacer una anotacion</h2>
+                <label for="note-input">
+                    <span class="span-titles">titulo de la nota</span>
+                    <input type="text" id="note-input" required>
+                </label>
+                <label for="note-desc-input">
+                    <span class="span-titles">descripcion de la nota</span>
+                    <textarea id="note-desc-input"></textarea>
+                </label>
+                <button type="submit" class="button-notes" id="button-note">agregar una nota</button>
+            </form>
+            <div class="con-categorias">
+                <hr>
+                <select id="agruparNotas">
+                    <option style="color: blue;" value="0">Todas</option>
+                    <option style="color: orange;" value="1">Pendiente</option>
+                    <option style="color: green;" value="2">Completados</option>
+                    <option style="color: red;" value="3">Incompletos</option>
+                </select>
+            </div>
+
+            <div id="notes" class="notes contenedorDeNotas">
+                <!-- <div class="memo show-note">
+                    <div>
+                        <div class="headerNote">
+                            <strong>Title</strong>
+                            <div class="menuNote">
+
+                                <img src="imagenes/menu.svg" alt="options">
+                                <ul>
+                                    <li>modificar</li>
+                                    <li>borrar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h2>titulo</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, obcaecati dolores! Fugit
+                            voluptatem, sunt nulla cum consectetur fugiat pariatur voluptates dignissimos deleniti omnis
+                            aperiam in eos maiores eveniet? </p>
+                        <select style="color: orange;"
+                            onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color">
+                            <option style="color: orange;" value="1">pendiente</option>
+                            <option style="color: green;" value="2">completo</option>
+                            <option style="color: red;" value="3">incompleto</option>
+                        </select>
+
+                    </div> -->
+            </div>
+
+            <!-- <div class="memo">
+                    <div>
+                        <h2>titulo</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, obcaecati dolores! Fugit
+                            voluptatem, sunt nulla cum consectetur fugiat pariatur voluptates dignissimos deleniti omnis
+                            aperiam in eos maiores eveniet? </p>
+                        <select style="color: orange;"
+                            onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color">
+                            <option style="color: orange;" value="1">pendiente</option>
+                            <option style="color: orchid;" value="2">completo</option>
+                            <option style="color: blue;" value="3">incompleto</option>
+                        </select>
+                    </div>
+                </div> -->
+        </div>
+        </div>
+        </div>
+        <div class="modal-datas">
+
+            <div class="cont-modal">
+                <form>
+                    <h2>REGISTRARSE</h2>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" id="name_mod" placeholder="INGRESE SU NOMBRE" required>
+                    </label>
+                    <label>
+                        <span>Apellido</span>
+                        <input type="text" id="Apellido_mod" placeholder="INGRESE SU APELLIDO" required>
+                    </label>
+                    <label>
+                        <span>edad</span>
+                        <input type="number" id="edad_mod" placeholder="INGRESE SU EDAD" required>
+                    </label>
+                    <label>
+                        <span>Correo</span>
+                        <input type="text" id="email_mod" placeholder="INGRESE SU CORREO" required>
+                    </label>
+                    <label>
+                        <span>Contraseña</span>
+                        <input type="password" id="password_mod" placeholder="INGRESE SU CONTRASEÑA" required>
+                    </label>
+                    <label>
+                        <span>Confirmar Contraseña</span>
+                        <input type="password" id="confirm" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                    </label>
+                    <div>
+                        <button type="button">Cancelar</button>
+                        <button type="submit">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./index.js" defer></script>
+</body>
+
+</html>

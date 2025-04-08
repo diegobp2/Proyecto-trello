@@ -1,0 +1,133 @@
+:root{
+    --Coloryellow: yellow;
+    --colorerror: red;
+    --colorblue: #004aad;
+}
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    @extend %center;
+    width: 100%;
+    height: 100vh;
+    color: var(--ColorTexto);
+    overflow: hidden;
+
+    .contenedor {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        // background-color: red;
+    }
+    #registrarse{
+       height: 90vh;
+       margin: auto;
+       margin-top: 140px;
+       width: 100vw;
+       h2,#linktoLogin,#error{
+        @extend %center;
+        width: 100%;
+       }
+       
+    }
+    #error{
+     color: var(--colorerror);
+    //  background-color: #000;
+     @extend %center
+ }
+
+    .editarPerfil {
+        text-align: center;
+
+        button {
+            margin-top: 2vh;
+
+            &:hover {
+                background-color: var(--colorblue);
+            }
+
+        }
+
+    }
+
+    .imgPerfil {
+        object-fit: cover;
+        aspect-ratio: 1;
+        width: 80%;
+        align-self: center;
+        border-radius: 100%;
+        background-color: #555;
+    }
+
+    form {
+        display: none;
+        flex-direction: column;
+        gap: 7px;
+        background: #f4f3f3;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+        width: 100%;
+        max-width: 50vh;
+        margin: auto;
+        height: auto;
+        /* width: 100%; */
+        h2,#linktoReg{
+            @extend %center
+        }
+        
+        input {
+            padding: 0.4rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            background-color: #fff;
+            outline: none;
+            width: 100%;
+        }
+
+        button {
+            @extend %center;
+            padding: 0.6rem;
+            background-color: var(--Coloryellow);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            &:hover{
+                background-color: var(--colorblue);
+                color: #fff;
+            }
+
+        }
+    }
+
+    #perfil{
+        height: auto;
+        margin-top: 70px;
+
+    }
+    .modal-datas, .modal-notes{
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        .cont-modal{
+            // display: flex; 
+            flex-direction: column;
+            max-width: 50vw;
+            form{
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "trello-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}

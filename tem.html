@@ -1,0 +1,782 @@
+:root {
+    --colores-body: #071c4c;
+    --color_header: rgba(255, 255, 0, 0.508);
+    --header--height: 60px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+h1 {
+    color: black;
+    animation: header_text 2s infinite;
+    font-size: 5rem;
+}
+
+body {
+    background-color: var(--colores-body);
+    display: flex;
+    justify-content: space-between;
+    /* Uso de la variable */
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    /* width: 100vw; */
+    background-color: white;
+    background-blend-mode: multiply;
+    /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/068/673/large_2x/design-background-abstract-yellow-and-black-free-vector.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color_header);
+    width: 100%;
+    position: relative;
+    animation: fade_in_header 4s forwards ease-in-out;
+    height: 120px;
+    margin: 0;
+    bottom: 100%;
+
+
+}
+#img1{
+    /* background-color: red; */
+    width: 100px;
+    background-image: url(imagenes/trello.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#span-header {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--header--height) /1);
+    margin-right: 20px;
+    overflow-wrap: anywhere;
+    font-weight: bold;
+}
+
+a {
+    display: flex;
+}
+
+#user-img>label {
+    display: none;
+    height: 100%;
+}
+
+#user-img>label>input {
+    display: none;
+}
+
+#user-img>div {
+    display: flex;
+    height: 100%;
+}
+
+#img1 {
+    animation: header_text 2s infinite;
+}
+
+#user-img {
+    /* background-color: red; */
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3em;
+
+
+}
+
+#user-img:hover .ul-div {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#user-img ul{
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    cursor: pointer;
+    transform: translateY(-50%) scaleY(0);
+    transition: transform 0.3s ease;
+}
+/* por hacer */
+#user-img:hover ul{
+    transform:  translateY(0) scaleY(1);
+}
+#user-img.hide-list ul{
+    transform: translateY(-50%) scaleY(0);
+}
+#img-user {
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: white;
+    object-fit: cover;
+
+}
+
+.ul-div {
+    position: absolute;
+    top: 100%;
+    right: 80px;
+    width: 250px;
+    height: 90px;
+    border-radius: 10px;
+    display: none;
+    background-color: white;
+
+}
+
+.lis {
+    font-size: x-large;
+    padding: 10px;
+}
+
+header>* {
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* padding: 0 5vh; */
+    overflow: hidden;
+    flex-direction: column;
+
+}
+
+
+
+#formularios {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* background-color: #071c4c; */
+    margin-top: 30px;
+    width: 30%;
+    height: auto;
+    border-radius: 20px;
+    /* gap: 10px; */
+}
+
+.forms {
+    /* background-color:#071c4c; */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 80%;
+    height: 650px;
+    margin: auto;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    /* background-color: rgb(0, 0, 0); */
+    /* margin-top: 20px; */
+    /* Ajustar el brillo para oscurecer el verde */
+    animation: forms 1s forwards ease-in-out;
+
+}
+
+#iniciar_sesion {
+    background-color: #071c4c;
+}
+
+#registrarse {
+    background-color: #071c4c;
+
+}
+
+#registrarse {
+    height: 950px;
+}
+
+h2 {
+    /* background-color: red; */
+    /* z-index: 3; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+
+input {
+    padding: 20px;
+    border-radius: 25px;
+    border: none;
+    /* background-color: rgba(93, 91, 91, 0.523); */
+    background: transparent;
+    box-shadow: 0px 0px 10px 5px blue;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0px white;
+    color: white;
+    font-size: 2rem;
+    /* color: black; */
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+input:hover {
+    background: linear-gradient(135deg, white);
+}
+
+#btn_sesion {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(217, 220, 15);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+#btn_sesion:hover {
+    scale: 1.1;
+    background-color: #cbc80f;
+}
+
+.btn_perfiles {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: yellow;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: x-large;
+    cursor: pointer;
+
+}
+
+#class-profile-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+}
+
+#change_img {
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+}
+
+#perfil {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 650px;
+    width: 70%;
+    margin-top: 100px;
+    background-color: whitesmoke;
+    color: black;
+}
+
+#btn_reg {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(220, 213, 15);
+    ;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+#btn_reg:hover {
+    scale: 1.1;
+    background-color: #cbc80f;
+}
+
+#btn_change,
+#btn_guardar,
+#btn_cancelar {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(251, 255, 0);
+}
+
+#btn_change:hover,
+#btn_guardar:hover,
+#btn_cancelar:hover {
+    scale: 1.1;
+    background-color: #cbc80f;
+}
+
+#linktoReg,
+#linktoLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-weight: bold; */
+    font-size: x-large;
+}
+
+#iniciar_sesion,
+#registrarse,
+#perfil {
+    display: none;
+}
+
+#error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+.cont-categorias{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 1fr 2fr;
+
+}
+.cont-note {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh -(var((--header--height))));
+    /* background-color: red;  */
+    overflow-y: scroll;
+    /* flex-wrap: wrap; */
+
+}
+
+#form-notes {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    text-align: center;
+    align-items: center;
+    width: 30%;
+    height: 90%;
+    gap: 30px;
+    margin: auto;
+    /* padding: 20px; */
+    background-color: whitesmoke;
+    color: black;
+}
+.cont-note .memo .separator{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cont-note .memo .separator .memu {
+    position: relative;
+    cursor: pointer;
+    border-radius: 1vh;
+    width: 5vh;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.form-note span {
+    align-self: flex-start;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 10vh;
+    max-height: 50vh;
+    width: 70%;
+}
+
+.button-notes {
+    width: 50%;
+    background-color: white;
+    height: 5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    ;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-notes:hover {
+    background-color: #fcfc00;
+    scale: 1.2;
+}
+.cont-categorias{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 1 fr 2fr;
+    align-items: center;
+    margin-top: 4vh;
+}
+.cont-categorias hr{
+    border: 0.5px solid black;
+}
+.cont-note form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.span-titles {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cont-notes form label input,
+.cont-notes form label textarea {
+    display: flex;
+    width: 100%;
+}
+
+.cont-note form #note-input {
+    width: 70%;
+    box-shadow: 0px 0px 2px 1px black;
+    color: black;
+}
+
+#note-desc-input {
+    font-size: 2rem;
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: red; */
+    height: auto;
+    /* gap: 15px; */
+    padding: 5vh 2vh;
+}
+
+.memo {
+    display: flex;
+    padding: 1vh;
+    /* background-color:yellow; */
+    width: 35vh;
+}
+
+.notes .memo.oculta{
+width: 0vh;
+padding: 0;
+}
+.notes .memo>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    border-radius: 1vh;
+    background-color: whitesmoke;
+    color: black;
+    transform: scale(1);
+}
+.notes .memo.oculta > div{
+    transform: scale(0);
+    display: none;
+
+}
+.cont-note .memo strong {
+    align-self: flex-start;
+    overflow-wrap: anywhere;
+}
+
+.cont-note .memo p {
+    overflow-wrap: anywhere;
+}
+
+.memo h2 {
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    /* background-color: red; */
+
+}
+
+.memo select, .cont-categorias select {
+    font-size: 3vh;
+    align-self: flex-end;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 238, 0);
+}
+
+.memo p {
+    font-size: 2vh;
+}
+
+.memo select:focus {
+    outline: none;
+}
+
+@keyframes fade_in_header {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes header_text {
+    0% {
+        opacity: 0;
+        transform: translateX(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+}
+
+
+.show-card {
+    animation: show-card 1 ease normal backwards;
+}
+
+.hide-card {
+    animation: hide-card 500ms ease normal backwards;
+}
+
+.show-note>div {
+    animation: show-note 1s ease normal backwards;
+}
+
+.hide-note>div {
+    animation: hide-note 1s ease 500ms normal forwards;
+}
+
+.show-note {
+    animation: show-cont-note 1s ease normal backwards;
+}
+
+.hide-note {
+    animation: hide-cont-note 1s ease 500ms normal forwards;
+}
+
+@keyframes show-note {
+    0% {
+        transform: scale(0);
+        display: flex;
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+@keyframes hide-note {
+    0% {
+        transform: scale(1);
+        
+    }
+    
+    100% {
+        transform: scaleY(0);
+        display: none;
+
+
+    }
+}
+
+@keyframes show-cont-note {
+    from {
+        width: 0;
+        padding: 0;
+    }
+
+    to {
+        width: 35vh;
+        padding: 1vh;
+    }
+}
+
+@keyframes hide-cont-note {
+    from {
+        width: 35vh;
+        padding: 1vh;
+    }
+
+    to {
+        width: 0;
+        padding: 0;
+    }
+}
+
+@keyframes hide-card {
+    0% {
+        transform: rotateY(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(90deg) rotateY(-90deg);
+    }
+}
+
+@keyframes show-card {
+    from {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+}
+
+@media screen and (max-aspect-ratio: 4/5), screen and (min-aspect-ratio: 5/4) {
+   
+
+   
+    h1 {
+        display: none;
+    }
+
+    #user-img>label {
+        display: flex;
+        margin-left: -100px;
+    }
+
+    #user-img>label>input:checked {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+    }
+
+    .lis {
+        background-color: white;
+        width: 100%;
+        padding: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #user-img>div {
+        position: absolute;
+        background-color: blue;
+        top: 100%;
+        height: calc(100vh - (var(--header--height)));
+        width: 90vw;
+        right: -90vw;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        opacity: 0;
+        background: linear-gradient(to top, dodgerblue 95%, mediumblue 200%);
+        transition: right 3s ease, opacity 0s ease 1s;
+    }
+
+    #user-img:has(label > input:checked)>div {
+        right: 0;
+        opacity: 1;
+        transition: right 3s ease, opacity 0s ease 0s;
+    }
+
+    #user-img>div span {
+        justify-content: center;
+        text-align: center;
+        font-size: 4vh;
+        height: unset;
+    }
+
+    #user-img>div #img-user {
+        height: 50%;
+        margin: 5vh;
+    }
+
+    #user-img .ul-div{
+        all: unset;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: flex-end;
+        transform: scaleY(1) translateY(0);
+    }
+    #user-img:hover .ul-div{
+        flex-direction: row;
+        justify-content: unset;
+        align-items: flex-end;
+    }
+}
+@media screen and (min-aspect-ratio: 5/4){
+    #user-img > div{
+        width: 50w;
+    }
+}
