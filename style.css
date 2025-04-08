@@ -230,13 +230,24 @@ main .modal-datas, main .modal-notes {
   position: fixed;
   left: 0;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 main .modal-datas .cont-modal, main .modal-notes .cont-modal {
   flex-direction: column;
   max-width: 50vw;
+  gap: 10px;
+  height: 65vh;
 }
 main .modal-datas .cont-modal form, main .modal-notes .cont-modal form {
   display: flex;
+}
+main .modal-datas .cont-modal form div, main .modal-notes .cont-modal form div {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 select, .cont-note form h2 {
