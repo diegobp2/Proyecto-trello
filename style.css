@@ -492,5 +492,52 @@ select {
     padding: 0;
   }
 }
+@media screen and (max-aspect-ratio: 4/5) {
+  h1 {
+    display: none;
+  }
+  label {
+    display: flex;
+  }
+  div {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.775);
+    top: 100%;
+    height: calc(100vh - var(--header-height));
+    width: 90vw;
+    right: -90vw;
+    flex-direction: column;
+    align-items: center;
+    transition: right ease 1s, opacity 1s ease;
+    opacity: 0;
+  }
+  div span {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 4vh;
+    height: unset;
+    padding-top: 8vh;
+  }
+  div .imgPerfil {
+    height: 30%;
+    margin: 2vh;
+  }
+  div ul {
+    all: unset;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+  }
+  div ul li {
+    width: 100%;
+    text-align: center;
+    border: 1px solid white;
+  }
+  div ul li:hover {
+    background-color: #7c7c7c;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
