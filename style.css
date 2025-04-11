@@ -236,13 +236,11 @@ main .modal-datas, main .modal-notes {
   flex-direction: column;
 }
 main .modal-datas .cont-modal, main .modal-notes .cont-modal {
+  display: flex;
   flex-direction: column;
   max-width: 50vw;
   gap: 10px;
   height: 65vh;
-}
-main .modal-datas .cont-modal form, main .modal-notes .cont-modal form {
-  display: flex;
 }
 main .modal-datas .cont-modal form div, main .modal-notes .cont-modal form div {
   display: flex;
@@ -499,7 +497,7 @@ select {
   label {
     display: flex;
   }
-  div {
+  .presentacion {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.775);
     top: 100%;
@@ -511,7 +509,7 @@ select {
     transition: right ease 1s, opacity 1s ease;
     opacity: 0;
   }
-  div span {
+  .presentacion span {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -519,23 +517,23 @@ select {
     height: unset;
     padding-top: 8vh;
   }
-  div .imgPerfil {
+  .presentacion .imgPerfil {
     height: 30%;
     margin: 2vh;
   }
-  div ul {
+  .presentacion ul {
     all: unset;
     display: flex;
     width: 100%;
     height: 100%;
     align-items: flex-end;
   }
-  div ul li {
+  .presentacion ul li {
     width: 100%;
     text-align: center;
     border: 1px solid white;
   }
-  div ul li:hover {
+  .presentacion ul li:hover {
     background-color: #7c7c7c;
   }
 }

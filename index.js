@@ -14,7 +14,7 @@ window.addEventListener("resize", () => {
     }, 1)
 })
 //the firts page of the app and the main page that the user see when he enter in the app
-view_control.update_view(2)
+view_control.update_view(0)
 // buttons
 elements.alinkregis.addEventListener("click", goTo.regis)
 
