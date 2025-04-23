@@ -68,7 +68,7 @@
                 <div id="class-profile-img">
                     <img class="imgPerfil" src="./imagenes/user.svg" id="change_img"></img>
                 </div>
-                <button type="button" id="btn_change" class="btn_perfiles">Cambiar foto</button>
+                <button type="button" id="btn_change" class="btn_perfiles">Modificar datos</button>
                 <button type="button" id="btn_cancelar" class="btn_perfiles">Cancelar</button>
                 <button type="button" id="btn_guardar" class="btn_perfiles">Guardar</button>
             </form>
@@ -141,11 +141,10 @@
         </div>
         </div>
         </div>
-        <div class="modal-datas">
-
+        <div class="modal-datas modal-hidden">
             <div class="cont-modal">
-                <form>
-                    <h2>REGISTRARSE</h2>
+                <form class="data-form">
+                    <h2>Modificar datos</h2>
                     <label>
                         <span>Name</span>
                         <input type="text" id="name_mod" placeholder="INGRESE SU NOMBRE" required>
@@ -163,18 +162,23 @@
                         <input type="text" id="email_mod" placeholder="INGRESE SU CORREO" required>
                     </label>
                     <label>
-                        <span>Contraseña</span>
-                        <input type="password" id="password_mod" placeholder="INGRESE SU CONTRASEÑA" required>
+                        <span>Contraseña anterior</span>
+                        <input type="password" id="passwordLast_mod" placeholder="INGRESE SU CONTRASEÑA" required>
+                    </label>
+                    <label>
+                        <span>nueva contraseña</span>
+                        <input type="password" id="new_contraseña" placeholder="VERIFIQUE SU CONTRASEÑA" required>
                     </label>
                     <label>
                         <span>Confirmar Contraseña</span>
-                        <input type="password" id="confirm" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                        <input type="password" id="confirm_contraseña" placeholder="VERIFIQUE SU CONTRASEÑA" required>
                     </label>
                     <div>
                         <button type="button">Cancelar</button>
                         <button type="submit">Modificar</button>
                     </div>
                 </form>
+                <p class="error-p"></p>
             </div>
         </div>
     </main>

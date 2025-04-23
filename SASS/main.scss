@@ -84,7 +84,7 @@ main {
         input {
             padding: 0.4rem;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 20px;
             font-size: 0.8rem;
             background-color: #fff;
             outline: none;
@@ -125,21 +125,43 @@ main {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        z-index: 1;
+        visibility: visible;
         .cont-modal{
             display: flex; 
             flex-direction: column;
             max-width: 50vw;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
             gap: 10px;
-            height: 65vh;
-            form{
-                // display: flex;
+            height: 85vh;
+            background-color: red;
+            flex-direction: column;
+            padding: 4vh;
+            transition: transform 0.3s ease, background-color 0.3 ease;
+            transform: scaleY(1);
+            .data-form{
+                display: flex;
+                // @extend %formulario;
+                // height: 100%;
+                // gap: 15px;
+
                 div{
                     display: flex;
                     width: 100%;
                     justify-content: space-evenly;
                 }
             }
-
+            
+        }
+        &.modal-hidden{
+            background-color: transparent;
+            visibility: hidden;
+            transition: visibility 0s 0.3s;
+            .cont-modal{
+                transform: scaleY(0);
+                
+            }
         }
     }
 }

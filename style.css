@@ -199,7 +199,7 @@ main form {
 main form input {
   padding: 0.4rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 0.8rem;
   background-color: #fff;
   outline: none;
@@ -234,18 +234,38 @@ main .modal-datas, main .modal-notes {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 1;
+  visibility: visible;
 }
 main .modal-datas .cont-modal, main .modal-notes .cont-modal {
   display: flex;
   flex-direction: column;
   max-width: 50vw;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
   gap: 10px;
-  height: 65vh;
+  height: 85vh;
+  background-color: red;
+  flex-direction: column;
+  padding: 4vh;
+  transition: transform 0.3s ease, background-color 0.3 ease;
+  transform: scaleY(1);
 }
-main .modal-datas .cont-modal form div, main .modal-notes .cont-modal form div {
+main .modal-datas .cont-modal .data-form, main .modal-notes .cont-modal .data-form {
+  display: flex;
+}
+main .modal-datas .cont-modal .data-form div, main .modal-notes .cont-modal .data-form div {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+}
+main .modal-datas.modal-hidden, main .modal-notes.modal-hidden {
+  background-color: transparent;
+  visibility: hidden;
+  transition: visibility 0s 0.3s;
+}
+main .modal-datas.modal-hidden .cont-modal, main .modal-notes.modal-hidden .cont-modal {
+  transform: scaleY(0);
 }
 
 select, .cont-note form h2 {

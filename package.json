@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev":"vite",
+    "shiny":"npx sass --watch style.scss:style.css"
   },
   "devDependencies": {
     "sass": "^1.86.0"
+  },
+  "dependencies": {
+    "extract-uri-image": "^1.0.2",
+    "vite": "^6.3.2"
   }
 }

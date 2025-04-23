@@ -2,19 +2,22 @@ import elements from "./elementos.js";
 import view_control from "./controlador.js";
 import User from "../classes/usuario.js";
 
-export const user = { actual: {} }
+export const user = { 
+    actual: {},
+    temporal: {}
+}
 export function register_user(event) {
     event.preventDefault()
     // we certified if the array user exits
     const databaseuserexist = localStorage.getItem("users")
     let databaseuser = []
     // If the array exists it means that it probably already has registered users within
-    if (databaseuserexist != null) {
+    if (databaseuserexist) {
         // we merge the empty array with the array brought from localstorage
         databaseuser = databaseuser.concat(JSON.stringify(databaseuserexist))
 
         // We search in this array if there is a user already registered with the email that we put in the registration field
-        const userexistent = databaseuser.find(usuario => usuario.email == elements.emailregis.value)
+        const userexistent = databaseuser.find(usuario => usuario.email.toLowerCase() == elements.emailregis.value.toLowerCase());
 
         // if user exists, throw an error
         if (userexistent) {
@@ -39,7 +42,7 @@ export function register_user(event) {
         elements.nameregis.value.replaceAll("<", "&#60").replaceAll(">", "&#62"),
         elements.lastnameregis.value.replaceAll("<", "&#60").replaceAll(">", "&#62"),
         elements.agereg.value.replaceAll("<", "&#60").replaceAll(">", "&#62"),
-        elements.emailregis.value.replaceAll("<", "&#60").replaceAll(">", "&#62"),
+        elements.emailregis.value.toLowerCase().replaceAll("<", "&#60").replaceAll(">", "&#62"),
         elements.passwordregis.value.replaceAll("<", "&#60").replaceAll(">", "&#62"),
     )
 
@@ -56,7 +59,7 @@ export function register_user(event) {
         elements.formregis.reset();
 
     }, 500)
-    elements.emaillogin.value = usersave.email
+    elements.emaillogin.value = elements.emailregis.value;
     // we comeback to the login
     view_control.update_view(0)
 }
@@ -74,11 +77,11 @@ export function enteruser(event) {
     baseusers = baseusers.concat(JSON.parse(DatabaseExits))
 
     let emailCamp = elements.emaillogin.value.replaceAll("<", "&#60").replaceAll(">", "&#62")
-    const userexistent = baseusers.find(usuario => usuario.email == emailCamp)
+    const userexistent = baseusers.find(usuario => usuario.email.toLowerCase() == emailCamp.toLowerCase())
 
     // if user doesn't exits, we get an error
     if (!userexistent) {
-        elements.perrorRegis.textContent = "user not found";
+        elements.perrorlogin.textContent = "user not found";
         return
     }
     let claveCamp= elements.passwordlogin.value.replaceAll("<", "&#60").replaceAll(">", "&#62")
@@ -97,6 +100,9 @@ export function enteruser(event) {
     setTimeout(() => {
         elements.formlogin.reset()
     }, 500)
-    view_control.update_view(2)
+    view_control.update_view(2);
+    for(const clave in user.actual){
+        user.temporal[clave] = user.actual[clave]
+    }
 }
 

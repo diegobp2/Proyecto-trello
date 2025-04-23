@@ -30,9 +30,9 @@ const elements={
     profile: document.getElementById("perfil"),
     imgphoto: document.getElementById("change_img"),
     namePerfil: document.querySelector("#h2-perfil"),
-    btnchangeprofile: document.getElementById("btn_change"),
-    btncancelprofile: document.getElementById("btn_cancelar"),
-    btnsaveprofile: document.getElementById("btn_guardar"),
+    btnDatachange: document.getElementById("btn_change"),
+    btnDataCancel: document.getElementById("btn_cancelar"),
+    btnDataSave: document.getElementById("btn_guardar"),
 
 
 // notes
@@ -42,6 +42,19 @@ const elements={
  notesCategories: document.getElementById("agruparNotas"),
  inputTitleNote: document.getElementById("note-input"),
  inputNoteDescription: document.getElementById("note-desc-input"),
+
+
+ modalDatas: document.querySelector(".modal-datas"),
+ formModalDatas: document.querySelector(".modal-datas form"),
+ nameModified: document.querySelector("#name_mod"),
+ lastNameModified: document.querySelector("#Apellido_mod"),
+ ageModified: document.querySelector("#edad_mod"),
+ emailModified: document.querySelector("#email_mod"),
+ claveModified: document.querySelector("#passwordLast_mod"),
+ claveNewDatas: document.querySelector("#new_contraseña"),
+ claveNewConfirModified: document.querySelector("#confirm_contraseña"),
+ cancelModified: document.querySelector(".modal-datas form button[type='button']"),
+ pErrorModified: document.querySelector(".modal-datas .error-p"),
 
 }
 

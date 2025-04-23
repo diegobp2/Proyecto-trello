@@ -4,6 +4,10 @@ import { user } from "./systemuser.js";
 import { cleanNotes } from "./notesystem.js";
 
 export function config(){
+    for(const clave in user.actual){
+        user.temporal[clave] = user.actual[clave]
+    }
+    console.log(user)
     elements.imgphoto.src= user.actual.photo
     elements.namePerfil.textContent =  user.actual.name.replaceAll("&#60", "<").replaceAll("&#62", ">") + " " + user.actual.lastname.replaceAll("&#60", "<").replaceAll("&#62", ">")
     cleanNotes()
@@ -17,7 +21,7 @@ export function config(){
             elements.header.querySelector("#user-img").classList.remove("hide-list")
         },600)
     },600)
-
+    // for (const )
 }
 export function out(){
     user.actual={}
