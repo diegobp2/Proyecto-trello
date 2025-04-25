@@ -96,7 +96,7 @@ header {
         transform: translateY(1) scaleY(0);
         display: none;
 
-        :hover {
+        &:hover {
           transform: translateY(0) scaleY(1);
           display: flex;
         }

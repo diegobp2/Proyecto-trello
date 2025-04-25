@@ -5,7 +5,7 @@ import { register_user, enteruser } from "./utils/systemuser.js"
 import { changePhoto } from "./utils/photoSystem.js"
 import * as goTo from "./utils/system_simple_view.js"
 import { changeNoteState, createNote, filterNotes, changeNote } from "./utils/notesystem.js"
-import { saveDatas, cancelDatas, changeDatas, aceptModified, cancelModified } from "./utils/system_modified.js";
+import { saveDatas, cancelDatas, changeDatas, cancelModified, aceptModified} from "./utils/system_modified.js";
 
 window.addEventListener("resize", () => {
     const mediaQuery = window.matchMedia("(max-aspect-ratio: 4/5)")
@@ -28,36 +28,36 @@ elements.btnDataCancel.addEventListener(
 
 elements.imgphoto.addEventListener("click", changePhoto)
 
-// elements.btnDatachange.addEventListener("click", changeDatas)
+elements.btnDatachange.addEventListener("click", changeDatas)
 
-// elements.cancelModified.addEventListener("click", cancelModified)
+elements.cancelModified.addEventListener("click", cancelModified)
 
-// elements.formModalDatas.addEventListener("submit", aceptModified)
+elements.formModalDatas.addEventListener("submit", aceptModified)
 
-// elements.btnDataSave.addEventListener(
-    // "click", saveDatas)
-
+elements.btnDataSave.addEventListener(
+    "click", saveDatas)
+elements.btnDataSave.addEventListener("click",saveDatas)
 elements.headerliconfi.addEventListener(
     "click", goTo.config
 )
+elements.btn
 elements.headerout.addEventListener("click", goTo.out)
 elements.formNotes.addEventListener("submit", createNote)
 elements.groupnotes.addEventListener("change", changeNoteState)
 elements.notesCategories.addEventListener("change", filterNotes)
 elements.groupnotes.addEventListener("click", changeNote)
+
 // patchDeleteNotes()
 // function patchDeleteNotes(){
-//     // verify if the database exists
+  
 // let base_Note= localStorage.getItem("notes")
 // if(!base_Note) return
-// base_Note
 
-// // if they doesn't have the property "eliminated", we add it
 // base_Note.forEach(note => {
 //     if(note.eliminated == undefined){
 //         note.eliminated = false
 //     }
 // });
-// // save and update the changes in the database
+
 // localStorage.setItem("notes",JSON.stringify(base_Note))
 // }

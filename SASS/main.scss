@@ -1,3 +1,5 @@
+@use "./formulario.scss";
+
 :root{
     --Coloryellow: yellow;
     --colorerror: red;
@@ -25,9 +27,9 @@ main {
         // background-color: red;
     }
     #registrarse{
-       height: 90vh;
+       height: 80vh;
        margin: auto;
-       margin-top: 140px;
+       margin-top: 100px;
        width: 100vw;
        h2,#linktoLogin,#error{
         @extend %center;
@@ -65,6 +67,7 @@ main {
     }
 
     form {
+        @extend %formulario;
         display: none;
         flex-direction: column;
         gap: 7px;
@@ -134,23 +137,22 @@ main {
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             gap: 10px;
-            height: 85vh;
-            background-color: red;
+            margin-top: 90px;
+            height: 90vh;
+            // background-color: transparent;
             flex-direction: column;
             padding: 4vh;
             transition: transform 0.3s ease, background-color 0.3 ease;
             transform: scaleY(1);
             .data-form{
-                display: flex;
-                // @extend %formulario;
+
+                @extend %formulario;
                 // height: 100%;
                 // gap: 15px;
+                // background-color: red;
+                height: 80vh;
 
-                div{
-                    display: flex;
-                    width: 100%;
-                    justify-content: space-evenly;
-                }
+              
             }
             
         }

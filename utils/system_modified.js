@@ -10,9 +10,9 @@ import { user } from "./systemuser.js";
 
 export function saveDatas(){
 // console.log("save")
-const databaseuserexist= localStorage.getItem("users")
+const databaseuserexist= localStorage.getItem("users");
 let baseUsers=[]
-if(databaseuserexist){
+if(!databaseuserexist){
     alert("error")
     return
 }
@@ -98,6 +98,34 @@ export function aceptModified(event){
     let campEmail= elements.emailModified.value.replaceAll("<","&#60").replaceAll(">","&#62;")
     const userExistent= dataUsers.find(userfound => userfound.email)
     
+if(userExistent){
+    if(userExistent.email != user.actual.email){
+        elements.pErrorModified.textContent = "the new email is already created";
+        return
+    }
+}
+
+// console.log("bbbbbbbbbbbbbb")
+let campClaveBefore= elements.claveModified.value.replaceAll("<","&#60;").replaceAll(">","&#62;")
+// console.log(user.actual.clave)
+if(campClaveBefore != user.actual.password){
+    elements.pErrorModified.textContent = "la clave anterior no es la misma"
+    return
+}
+let campNewClave = elements.claveNewDatas.value
+let campNewClaveConfirm= elements.claveNewConfirModified.value
+if(campNewClave != campNewClaveConfirm){
+    elements.pErrorModified.textContent= "la clave nueva y su confirmacion no son la misma"
+    return
+}
+
+elements.pErrorModified.textContent= ""
+
+user.temporal.name=elements.nameModified.value.replaceAll("<", "&#60;").replaceAll(">", "&#62;")
+user.temporal.lastname=elements.lastNameModified.value.replaceAll("<", "&#60;").replaceAll(">","&#62;")
+user.temporal.age=elements.ageModified.value.replaceAll("<", "&#60;").replaceAll(">", "&#62")
+user.temporal.email= campEmail
+user.temporal.password= elements.claveModified.value.replaceAll("<", "&#60;").replaceAll(">", "&#62")
 
     elements.modalDatas.classList.add("modal-hidden");
 

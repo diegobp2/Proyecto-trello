@@ -143,7 +143,7 @@
         </div>
         <div class="modal-datas modal-hidden">
             <div class="cont-modal">
-                <form class="data-form">
+                <form class="data-form diferente">
                     <h2>Modificar datos</h2>
                     <label>
                         <span>Name</span>
@@ -179,6 +179,24 @@
                     </div>
                 </form>
                 <p class="error-p"></p>
+            </div>
+        </div>
+        <div class="modal-notas">
+            <div class="cont-modal">
+                <form id="formModificarNotas" class="diferente">
+                    <label for="mod-note-title-input">
+                        <span>title of the note</span>
+                        <input type="text" id="mod-note-title-input" required>
+                    </label>
+                    <label for="mod-note-des-input">
+                        <span>note description</span>
+                        <input type="text" id="mod-note-des-input" required>
+                    </label>
+                    <div>
+                        <button type="button">Cancel</button>
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

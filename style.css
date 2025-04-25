@@ -114,7 +114,7 @@ header .perfil div ul {
   transform: translateY(1) scaleY(0);
   display: none;
 }
-header .perfil div ul :hover {
+header .perfil div ul:hover {
   transform: translateY(0) scaleY(1);
   display: flex;
 }
@@ -126,6 +126,76 @@ header .perfil div li {
 header .perfil div li :hover {
   background-color: #ccc;
   color: #fff;
+}
+
+main form, main .modal-datas .cont-modal .data-form, main .modal-notes .cont-modal .data-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+main form label, main .modal-datas .cont-modal .data-form label, main .modal-notes .cont-modal .data-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+}
+main form label input, main .modal-datas .cont-modal .data-form label input, main .modal-notes .cont-modal .data-form label input, main form label textarea, main .modal-datas .cont-modal .data-form label textarea, main .modal-notes .cont-modal .data-form label textarea {
+  margin: 5px 0;
+  padding: 1vh;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+}
+main form label input:hover, main .modal-datas .cont-modal .data-form label input:hover, main .modal-notes .cont-modal .data-form label input:hover, main form label textarea:hover, main .modal-datas .cont-modal .data-form label textarea:hover, main .modal-notes .cont-modal .data-form label textarea:hover {
+  background-color: rgba(255, 255, 255, 0.721);
+}
+main form label input:focus, main .modal-datas .cont-modal .data-form label input:focus, main .modal-notes .cont-modal .data-form label input:focus, main form label textarea:focus, main .modal-datas .cont-modal .data-form label textarea:focus, main .modal-notes .cont-modal .data-form label textarea:focus {
+  background-color: 10x solimm;
+}
+main form label textarea, main .modal-datas .cont-modal .data-form label textarea, main .modal-notes .cont-modal .data-form label textarea {
+  resize: vertical;
+  min-height: 10vh;
+  max-height: 50vh;
+}
+main form div, main .modal-datas .cont-modal .data-form div, main .modal-notes .cont-modal .data-form div {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+main form button, main .modal-datas .cont-modal .data-form button, main .modal-notes .cont-modal .data-form button {
+  margin: 10px 10px;
+  padding: 1vh;
+  border: none;
+  border-radius: 10px;
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 3vh;
+  gap: 15px;
+}
+main form button:hover, main .modal-datas .cont-modal .data-form button:hover, main .modal-notes .cont-modal .data-form button:hover {
+  background-color: rgb(0, 255, 60);
+}
+main form > .imgPerfil, main .modal-datas .cont-modal .data-form > .imgPerfil, main .modal-notes .cont-modal .data-form > .imgPerfil {
+  width: 50%;
+  aspect-ratio: 1;
+  border-radius: white;
+  margin: auto;
+  object-fit: cover;
+}
+main form.diferente div, main .modal-datas .cont-modal .diferente.data-form div, main .modal-notes .cont-modal .diferente.data-form div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+main form.diferente div button, main .modal-datas .cont-modal .diferente.data-form div button, main .modal-notes .cont-modal .diferente.data-form div button {
+  background-color: gray;
+  width: 100%;
+}
+main form.diferente div button:first-child:hover, main .modal-datas .cont-modal .diferente.data-form div button:first-child:hover, main .modal-notes .cont-modal .diferente.data-form div button:first-child:hover {
+  background-color: red;
+}
+main form.diferente div button:last-child:hover, main .modal-datas .cont-modal .diferente.data-form div button:last-child:hover, main .modal-notes .cont-modal .diferente.data-form div button:last-child:hover {
+  background-color: green;
 }
 
 :root {
@@ -154,9 +224,9 @@ main .contenedor {
   width: 100%;
 }
 main #registrarse {
-  height: 90vh;
+  height: 80vh;
   margin: auto;
-  margin-top: 140px;
+  margin-top: 100px;
   width: 100vw;
 }
 main #registrarse h2, main #registrarse #linktoLogin, main #registrarse #error {
@@ -244,20 +314,15 @@ main .modal-datas .cont-modal, main .modal-notes .cont-modal {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   gap: 10px;
-  height: 85vh;
-  background-color: red;
+  margin-top: 90px;
+  height: 90vh;
   flex-direction: column;
   padding: 4vh;
   transition: transform 0.3s ease, background-color 0.3 ease;
   transform: scaleY(1);
 }
 main .modal-datas .cont-modal .data-form, main .modal-notes .cont-modal .data-form {
-  display: flex;
-}
-main .modal-datas .cont-modal .data-form div, main .modal-notes .cont-modal .data-form div {
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  height: 80vh;
 }
 main .modal-datas.modal-hidden, main .modal-notes.modal-hidden {
   background-color: transparent;
@@ -329,18 +394,18 @@ select, .cont-note form h2 {
   width: 100%;
   padding: 0.5rem;
 }
-.cont-note .contenedorDeNotas .note, .cont-note .contenedorDeNotas .memo {
+.cont-note .contenedorDeNotas .memo {
   width: auto;
   height: auto;
   padding: 1rem;
   overflow: hidden;
   width: 40vh;
 }
-.cont-note .contenedorDeNotas .note .ocultar, .cont-note .contenedorDeNotas .memo .ocultar {
+.cont-note .contenedorDeNotas .memo.ocultar {
   padding: 0;
   width: 0;
 }
-.cont-note .contenedorDeNotas .note > div, .cont-note .contenedorDeNotas .memo > div {
+.cont-note .contenedorDeNotas .memo > div {
   background-color: var(--ColorTexto);
   width: 100%;
   padding: 4vh 1.5vh;
@@ -353,41 +418,41 @@ select, .cont-note form h2 {
   color: #004aad;
   transform: scale(1);
 }
-.cont-note .contenedorDeNotas .note .ocultar > div, .cont-note .contenedorDeNotas .memo .ocultar > div {
+.cont-note .contenedorDeNotas .memo.ocultar > div {
   transform: scale(0);
   display: none;
 }
-.cont-note .contenedorDeNotas .note p, .cont-note .contenedorDeNotas .memo p {
+.cont-note .contenedorDeNotas .memo p {
   font-size: 3.4vh;
   overflow-wrap: anywhere;
 }
-.cont-note .contenedorDeNotas .note strong, .cont-note .contenedorDeNotas .memo strong {
+.cont-note .contenedorDeNotas .memo strong {
   font-size: 1.7rem;
   align-self: flex-start;
   overflow-wrap: anywhere;
 }
-.cont-note .contenedorDeNotas .note .headerNote, .cont-note .contenedorDeNotas .memo .headerNote {
+.cont-note .contenedorDeNotas .memo .headerNote {
   display: flex;
   justify-content: space-between;
   padding: 0;
 }
-.cont-note .contenedorDeNotas .note .menuNote, .cont-note .contenedorDeNotas .memo .menuNote {
+.cont-note .contenedorDeNotas .memo .menuNote {
   display: flex;
   position: relative;
 }
-.cont-note .contenedorDeNotas .note .menuNote img, .cont-note .contenedorDeNotas .memo .menuNote img {
+.cont-note .contenedorDeNotas .memo .menuNote img {
   width: 4vh;
 }
-.cont-note .contenedorDeNotas .note .menuNote:hover, .cont-note .contenedorDeNotas .memo .menuNote:hover {
+.cont-note .contenedorDeNotas .memo .menuNote:hover {
   background-color: #2d384a;
 }
-.cont-note .contenedorDeNotas .note .menuNote:hover ul, .cont-note .contenedorDeNotas .memo .menuNote:hover ul {
+.cont-note .contenedorDeNotas .memo .menuNote:hover ul {
   background-color: #fff;
   color: #222a37;
   width: 20vh;
   transform: translateY(0) scaleY(1);
 }
-.cont-note .contenedorDeNotas .note .menuNote ul, .cont-note .contenedorDeNotas .memo .menuNote ul {
+.cont-note .contenedorDeNotas .memo .menuNote ul {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -397,12 +462,12 @@ select, .cont-note form h2 {
   transition: transform 0.3s ease;
   transform: translateY(-50%) scaleY(0);
 }
-.cont-note .contenedorDeNotas .note .menuNote ul li, .cont-note .contenedorDeNotas .memo .menuNote ul li {
+.cont-note .contenedorDeNotas .memo .menuNote ul li {
   border: solid 1px #2d384a;
   width: 100%;
   padding: 1vh;
 }
-.cont-note .contenedorDeNotas .note p, .cont-note .contenedorDeNotas .memo p {
+.cont-note .contenedorDeNotas .memo p {
   margin-top: 3vh;
 }
 

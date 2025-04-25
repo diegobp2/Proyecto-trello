@@ -9,7 +9,7 @@ export const user = {
 export function register_user(event) {
     event.preventDefault()
     // we certified if the array user exits
-    const databaseuserexist = localStorage.getItem("users")
+    const databaseuserexist = localStorage.getItem("user")
     let databaseuser = []
     // If the array exists it means that it probably already has registered users within
     if (databaseuserexist) {

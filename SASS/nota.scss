@@ -67,7 +67,7 @@
         // background-color: #222a37;
 
 
-        .note, .memo {
+        .memo {
             width: auto;
             // background-color: red;
             height: auto;
@@ -76,7 +76,7 @@
             width: 40vh;
 
 
-            .ocultar {
+            &.ocultar {
                 padding: 0;
                 width: 0;
             }
@@ -95,7 +95,7 @@
                 transform: scale(1);
             }
 
-            .ocultar>div {
+            &.ocultar>div {
                 transform: scale(0);
                 display: none;
             }

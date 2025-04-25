@@ -103,26 +103,26 @@ function createHTMLnote(...notes) {
 
             htmlText += `
                 <div class="note memo show-note" id="notes${id}">
-                <div>
-                <div class="headerNote">
-                <strong>${title}</strong>
-                <div class="menuNote">
-                <img src="imagenes/menu.svg" alt="options">
-                <ul>
-                 <li class= "btn-modified-note">modificar</li>
-                 <li class= "btn-delete-note">borrar</li>
-                </ul>
-                </div>
-                </div>
-                <p>${description}</p>
-                <select style="color: ${color_select};" class="opcion${state}">
-                
-                <option ${state == 1 ? 'selected' : ''} style="color: orange;" value="1">pendiente</option>
-                <option ${state == 2 ? 'selected' : ''} style="color: green;" value="2">completo</option>
-                <option ${state == 3 ? 'selected' : ''} style="color: red;" value="3">incompleto</option>
-                </select>
-                
-                </div>
+                    <div>
+                        <div class="headerNote">
+                            <strong>${title}</strong>
+                            <div class="menuNote">
+                            <img src="imagenes/menu.svg" alt="options">
+                            <ul>
+                            <li class= "btn-modified-note">modificar</li>
+                            <li class= "btn-delete-note">borrar</li>
+                        </ul>
+                    </div>
+                    </div>
+                        <p>${description}</p>
+                        <select style="color: ${color_select};" class="opcion${state}">
+                        
+                            <option ${state == 1 ? 'selected' : ''} style="color: orange;" value="1">pendiente</option>
+                            <option ${state == 2 ? 'selected' : ''} style="color: green;" value="2">completo</option>
+                            <option ${state == 3 ? 'selected' : ''} style="color: red;" value="3">incompleto</option>
+                        </select>
+                    
+                    </div>
                 </div>
             `
             setTimeout(() => {
@@ -203,30 +203,40 @@ export function changeNote(event) {
     if (label.tagName != "LI") return
 
     // obtener la nota
-    const note = label.closest(".note");
-    const idNote = nota.id.replace("nota", "");
+    const note = label.closest(".memo");
+    const idNote = note.id.replace("notes", "");
     // el replace es para eliminar la palabra "nota" de la cadena, ya que el id de la nota es "nota" seguido del número de la nota
-    const baseNotasExiste = localStorage.getItem("Notas");
+    const baseNotasExiste = localStorage.getItem("notes");
     let baseNotes = []
     // si no existe la base de datos de notas, crea una nueva
     if(!baseNotasExiste){
         alert("No hay notas guardadas, base de datos no existe");
+        
         return;
     }
+    
     // el JSON.parse es para convertir el string a un array de objetos
     baseNotes =  baseNotes.concat(JSON.parse(baseNotasExiste))
     // el concat es para agregar el objeto de la nota actual a la base de datos
+    // console.log("aaaa")
     const indiceNotaExiste = baseNotes.findIndex(not => not.id == idNote);
 
+    
+    
     if(indiceNotaExiste == -1){
+        
         alert("Nota no encontrada");
         return;
     }
-
-    if (label.clasName == "btn-modified-note") {
+    // console.log("aaaa")
+    
+    if (label.className == "btn-modified-note") {
+        
         modifiedNote()
     }
-    if (label.clasName == "btn-delete-note") {
+    // console.log("aaaa")
+    if (label.className == "btn-delete-note") {
+        
         deleteNote(note, idNote,indiceNotaExiste,baseNotes)
     }
 }
@@ -243,29 +253,30 @@ function deleteNote(elementoNote, idDeLaNote, posicionNote, baseNote){
 
     baseNote.splice(posicionNote, 1);
     // el splice es para eliminar la nota de la base de datos y guardamos
-    localStorage.setItem("Notas", JSON.stringify(baseNote));
+    localStorage.setItem("notes", JSON.stringify(baseNote));
 
     // ahora borramos en dom
-    animarNotaEspecifica(elementoNote, false);
+    animateEspecificNote(elementoNote, false);
     // el false es para que la nota se borre de la pantalla
     setTimeout(()=>{
-        document.getElementById(nota$,{idDeLaNote}).remove();
+        document.getElementById(`notes${idDeLaNote}`).remove();
     },1000)
 
 }
 function animateEspecificNote(which_one, state) {
     if (state) {
         if (which_one.clasName == "memo mostrada") return
-
+        
         which_one.className = "memo show-note"
         setTimeout(() => {
             which_one.className = "memo mostrada"
-        }, 600)
+        }, 2000)
     } else {
+        if (which_one.clasName == "memo ocultar") return
 
         which_one.className = "memo hide-note"
         setTimeout(() => {
-            which_one.className = "memo oculta"
-        }, 600)
+            which_one.className = "memo ocultar"
+        }, 2000)
     }
 }
