@@ -4,7 +4,7 @@ import view_control from "./utils/controlador.js"
 import { register_user, enteruser } from "./utils/systemuser.js"
 import { changePhoto } from "./utils/photoSystem.js"
 import * as goTo from "./utils/system_simple_view.js"
-import { changeNoteState, createNote, filterNotes, changeNote } from "./utils/notesystem.js"
+import { changeNoteState, createNote, filterNotes, changeNote, modifiedNote, cancelNoteModified } from "./utils/notesystem.js"
 import { saveDatas, cancelDatas, changeDatas, cancelModified, aceptModified} from "./utils/system_modified.js";
 
 window.addEventListener("resize", () => {
@@ -46,7 +46,8 @@ elements.formNotes.addEventListener("submit", createNote)
 elements.groupnotes.addEventListener("change", changeNoteState)
 elements.notesCategories.addEventListener("change", filterNotes)
 elements.groupnotes.addEventListener("click", changeNote)
-
+elements.formModalNotes.addEventListener("submit", modifiedNote)
+elements.cancelNoteModified.addEventListener("click", cancelNoteModified)
 // patchDeleteNotes()
 // function patchDeleteNotes(){
   

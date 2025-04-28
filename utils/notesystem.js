@@ -40,8 +40,8 @@ export function createNote(event) {
     // Create a new Note instance: A new note is created using the Note class, passing the index (array length), title, description, and the current user's email.
     const newNote = new Note(
         // databaseNotes.length,
-        title.replaceAll("<", "&#60").replaceAll(">", "&#62"),
-        description.replaceAll("<", "&#60").replaceAll(">", "&#62"),
+        title.replaceAll("<", "&#60;").replaceAll(">", "&#62;"),
+        description.replaceAll("<", "&#60;").replaceAll(">", "&#62;"),
         user.actual.email
     )
     databaseNotes.push(newNote)
@@ -209,42 +209,112 @@ export function changeNote(event) {
     const baseNotasExiste = localStorage.getItem("notes");
     let baseNotes = []
     // si no existe la base de datos de notas, crea una nueva
-    if(!baseNotasExiste){
+    if (!baseNotasExiste) {
         alert("No hay notas guardadas, base de datos no existe");
-        
+
         return;
     }
-    
+
     // el JSON.parse es para convertir el string a un array de objetos
-    baseNotes =  baseNotes.concat(JSON.parse(baseNotasExiste))
+    baseNotes = baseNotes.concat(JSON.parse(baseNotasExiste))
     // el concat es para agregar el objeto de la nota actual a la base de datos
     // console.log("aaaa")
     const indiceNotaExiste = baseNotes.findIndex(not => not.id == idNote);
 
-    
-    
-    if(indiceNotaExiste == -1){
-        
+
+
+    if (indiceNotaExiste == -1) {
+
         alert("Nota no encontrada");
         return;
     }
     // console.log("aaaa")
-    
+
     if (label.className == "btn-modified-note") {
-        
-        modifiedNote()
+
+        deployNoteModified(idNote, indiceNotaExiste, baseNotes);
     }
     // console.log("aaaa")
     if (label.className == "btn-delete-note") {
-        
-        deleteNote(note, idNote,indiceNotaExiste,baseNotes)
+
+        deleteNote(note, idNote, indiceNotaExiste, baseNotes);
     }
 }
-function modifiedNote(){
-console.log("funciona");
+
+function deployNoteModified(idNote, Noteposition, baseNotes) {
+    elements.titleNoteModified.value = baseNotes[Noteposition].title;
+    elements.descriptionNoteModified.value = baseNotes[Noteposition].description;
+    elements.modalNotes.classList.add(`nota${idNote}`)
+    elements.modalNotes.classList.remove("modal-hidden")
+}
+
+
+
+
+export function modifiedNote(event) {
+    event.preventDefault(event)
+    const baseNotesExists = localStorage.getItem("notes");
+    const baseNotes = baseNotesExists ? JSON.parse(baseNotesExists) : []
+    if (!baseNotes.length) {
+        alert("error")
+        return
+    }
+    let idnote = ""
+    for (const clase of elements.modalNotes.classList) {
+        if (clase.startsWith("notes")) {
+            idnote = clase
+            elements.modalNotes.classList.remove(clase)
+        }
+    }
+    const indexNoteExists = baseNotes.findIndex(not => not.id == idnote.replace("notes", ""))
+    if (indexNoteExists == -1) {
+        alert("note that you want modified not exits")
+    }
+    baseNotes[indexNoteExists].title = elements.titleNoteModified.value.replaceAll("&#60;", "<").replaceAll("&#62;", ">")
+
+    baseNotes[indexNoteExists].description = elements.descriptionNoteModified.value.replaceAll("&#60;","<").replaceAll("&#62;",">")
+
+    localStorage.setItem("notes", JSON.stringify(baseNotes))
+    const htmlNote = document.getElementById(idnote)
+    elements.modalNotes.classList.add("modal-hidden")
+    setTimeout(() => {
+        elements.formModalNotes.reset()
+        setTimeout(()=>{
+            animateEspecificNote(which_one,false)
+            const titleHeader= htmlNote.querySelector("strong")
+            const paragraf= htmlNote.querySelector("description")
+
+            titleHeader.textContent=baseNotes[indexNoteExists].title
+            paragraf.textContent=baseNotes[indexNoteExists].description
+            setTimeout(()=>{
+animateEspecificNote(which_one,true)
+
+            },2000 )
+        },2000 )
+    }, 300)
 
 }
-function deleteNote(elementoNote, idDeLaNote, posicionNote, baseNote){
+
+
+
+export function cancelNoteModified() {
+    let idNote = ""
+    for (const clase of elements.modalNotes.classList) {
+        if (clase.startsWith("notes")) {
+            elements.modalNotes.classList.remove(clase)
+        }
+    }
+    elements.modalNotes.classList.add("modal-hidden")
+    setTimeout(() => {
+        elements.formModalNotes.reset()
+    }, 300)
+
+}
+
+
+
+
+function deleteNote(elementoNote, idDeLaNote, posicionNote, baseNote) {
 
     // el elementoNota es el elemento que se ha seleccionado para borrar
     // el idDeLaNota es el id de la nota que se ha seleccionado para borrar
@@ -258,15 +328,15 @@ function deleteNote(elementoNote, idDeLaNote, posicionNote, baseNote){
     // ahora borramos en dom
     animateEspecificNote(elementoNote, false);
     // el false es para que la nota se borre de la pantalla
-    setTimeout(()=>{
+    setTimeout(() => {
         document.getElementById(`notes${idDeLaNote}`).remove();
-    },1000)
+    }, 1000)
 
 }
 function animateEspecificNote(which_one, state) {
     if (state) {
         if (which_one.clasName == "memo mostrada") return
-        
+
         which_one.className = "memo show-note"
         setTimeout(() => {
             which_one.className = "memo mostrada"

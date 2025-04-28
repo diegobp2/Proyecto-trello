@@ -90,10 +90,12 @@
                 <hr>
                 <select id="agruparNotas">
                     <option style="color: blue;" value="0">Todas</option>
-                    <option style="color: orange;" value="1">Pendiente</option>
+                    <option style="color: rgb(0, 0, 0);" value="1">Pendiente</option>
                     <option style="color: green;" value="2">Completados</option>
                     <option style="color: red;" value="3">Incompletos</option>
                 </select>
+                <hr>
+                
             </div>
 
             <div id="notes" class="notes contenedorDeNotas">
@@ -181,19 +183,20 @@
                 <p class="error-p"></p>
             </div>
         </div>
-        <div class="modal-notas">
-            <div class="cont-modal">
-                <form id="formModificarNotas" class="diferente">
+        <div class="modal-notas modal-hidden">
+            <div class="cont-modal cont-notes ">
+                <form id="formModificarNotas" class="diferente data-form">
+                    <h2>Note modified</h2>
                     <label for="mod-note-title-input">
                         <span>title of the note</span>
                         <input type="text" id="mod-note-title-input" required>
                     </label>
-                    <label for="mod-note-des-input">
+                    <label for="mod-note-desc-input">
                         <span>note description</span>
-                        <input type="text" id="mod-note-des-input" required>
+                        <input type="text" id="mod-note-desc-input" required>
                     </label>
                     <div>
-                        <button type="button">Cancel</button>
+                        <button type="button" id="btn-cancel">Cancel</button>
                         <button type="submit">Actualizar</button>
                     </div>
                 </form>

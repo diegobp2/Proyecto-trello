@@ -43,7 +43,7 @@ const elements={
  inputTitleNote: document.getElementById("note-input"),
  inputNoteDescription: document.getElementById("note-desc-input"),
 
-
+// datas modified
  modalDatas: document.querySelector(".modal-datas"),
  formModalDatas: document.querySelector(".modal-datas form"),
  nameModified: document.querySelector("#name_mod"),
@@ -56,7 +56,15 @@ const elements={
  cancelModified: document.querySelector(".modal-datas form button[type='button']"),
  pErrorModified: document.querySelector(".modal-datas .error-p"),
 
+// notes modified
+
+modalNotes: document.querySelector(".modal-notas"),
+formModalNotes: document.querySelector(".modal-notas form"),
+titleNoteModified: document.getElementById("mod-note-title-input"),
+descriptionNoteModified: document.getElementById("mod-note-desc-input"),
+cancelNoteModified: document.getElementById("btn-cancel")
 }
+// console.log(elements)
 
 export default elements
 

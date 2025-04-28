@@ -51,7 +51,7 @@ view_control.update_view(3)
 
 setTimeout(()=>{
     getNotes(user.actual.email)
-    elements.contCategorias.className= "cont-categorias show-category"
+    elements.notesCategories.className= "cont-categorias show-category"
 },500)
 
 user.temporal= {}

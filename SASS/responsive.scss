@@ -1,5 +1,7 @@
 @media screen and (max-aspect-ratio: 4/5) {
-  
+  header{
+    display: flex;
+  }
     h1 {
         display: none;
     }
@@ -50,16 +52,24 @@
         }
         }
     }
-    // .modal-datas, .modal-notes{
-    //     background-color: rgba(0, 0, 0, 0.2);
-    //     width: 100vw;
-    //     height: 100vh;
-    //     position: fixed;
-    //     left: 0;
-    //     top: 0;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     flex-direction: column;
-    // }
+    .cont-modal{
+  width: 60vw;
+  height: 60vh;
+        .data-form{
+      width: 40vw;
+      height: 40vh;
+    }
+    }
+    .modal-datas, .modal-notes{
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
