@@ -244,7 +244,7 @@ export function changeNote(event) {
 function deployNoteModified(idNote, Noteposition, baseNotes) {
     elements.titleNoteModified.value = baseNotes[Noteposition].title;
     elements.descriptionNoteModified.value = baseNotes[Noteposition].description;
-    elements.modalNotes.classList.add(`nota${idNote}`)
+    elements.modalNotes.classList.add(`notes${idNote}`)
     elements.modalNotes.classList.remove("modal-hidden")
 }
 
@@ -269,6 +269,7 @@ export function modifiedNote(event) {
     const indexNoteExists = baseNotes.findIndex(not => not.id == idnote.replace("notes", ""))
     if (indexNoteExists == -1) {
         alert("note that you want modified not exits")
+        return
     }
     baseNotes[indexNoteExists].title = elements.titleNoteModified.value.replaceAll("&#60;", "<").replaceAll("&#62;", ">")
 
@@ -279,17 +280,13 @@ export function modifiedNote(event) {
     elements.modalNotes.classList.add("modal-hidden")
     setTimeout(() => {
         elements.formModalNotes.reset()
+        animateEspecificNote(htmlNote,false)
         setTimeout(()=>{
-            animateEspecificNote(which_one,false)
-            const titleHeader= htmlNote.querySelector("strong")
-            const paragraf= htmlNote.querySelector("description")
+            htmlNote.querySelector("strong").textContent= baseNotes[indexNoteExists].title
+            htmlNote.querySelector("p").textContent= baseNotes[indexNoteExists].description
+          
+animateEspecificNote(htmlNote,true)
 
-            titleHeader.textContent=baseNotes[indexNoteExists].title
-            paragraf.textContent=baseNotes[indexNoteExists].description
-            setTimeout(()=>{
-animateEspecificNote(which_one,true)
-
-            },2000 )
         },2000 )
     }, 300)
 

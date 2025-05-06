@@ -128,41 +128,41 @@ header .perfil div li :hover {
   color: #fff;
 }
 
-main form, main .modal-datas .data-form, main .modal-notas .data-form {
+main form, main .modal-datas .data-form, main .modal-notas .data-form, main .modal-image .data-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-main form label, main .modal-datas .data-form label, main .modal-notas .data-form label {
+main form label, main .modal-datas .data-form label, main .modal-notas .data-form label, main .modal-image .data-form label {
   display: flex;
   flex-direction: column;
   font-size: 2vh;
 }
-main form label input, main .modal-datas .data-form label input, main .modal-notas .data-form label input, main form label textarea, main .modal-datas .data-form label textarea, main .modal-notas .data-form label textarea {
+main form label input, main .modal-datas .data-form label input, main .modal-notas .data-form label input, main .modal-image .data-form label input, main form label textarea, main .modal-datas .data-form label textarea, main .modal-notas .data-form label textarea, main .modal-image .data-form label textarea {
   margin: 5px 0;
   padding: 1vh;
   border: none;
   border-radius: 10px;
   background-color: white;
 }
-main form label input:hover, main .modal-datas .data-form label input:hover, main .modal-notas .data-form label input:hover, main form label textarea:hover, main .modal-datas .data-form label textarea:hover, main .modal-notas .data-form label textarea:hover {
+main form label input:hover, main .modal-datas .data-form label input:hover, main .modal-notas .data-form label input:hover, main .modal-image .data-form label input:hover, main form label textarea:hover, main .modal-datas .data-form label textarea:hover, main .modal-notas .data-form label textarea:hover, main .modal-image .data-form label textarea:hover {
   background-color: rgba(255, 255, 255, 0.721);
 }
-main form label input:focus, main .modal-datas .data-form label input:focus, main .modal-notas .data-form label input:focus, main form label textarea:focus, main .modal-datas .data-form label textarea:focus, main .modal-notas .data-form label textarea:focus {
+main form label input:focus, main .modal-datas .data-form label input:focus, main .modal-notas .data-form label input:focus, main .modal-image .data-form label input:focus, main form label textarea:focus, main .modal-datas .data-form label textarea:focus, main .modal-notas .data-form label textarea:focus, main .modal-image .data-form label textarea:focus {
   background-color: 10x solimm;
 }
-main form label textarea, main .modal-datas .data-form label textarea, main .modal-notas .data-form label textarea {
+main form label textarea, main .modal-datas .data-form label textarea, main .modal-notas .data-form label textarea, main .modal-image .data-form label textarea {
   resize: vertical;
   min-height: 10vh;
   max-height: 50vh;
 }
-main form div, main .modal-datas .data-form div, main .modal-notas .data-form div {
+main form div, main .modal-datas .data-form div, main .modal-notas .data-form div, main .modal-image .data-form div {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
 }
-main form button, main .modal-datas .data-form button, main .modal-notas .data-form button {
+main form button, main .modal-datas .data-form button, main .modal-notas .data-form button, main .modal-image .data-form button, main form .btn-label, main .modal-datas .data-form .btn-label, main .modal-notas .data-form .btn-label, main .modal-image .data-form .btn-label {
   margin: 10px 10px;
   padding: 1vh;
   border: none;
@@ -171,30 +171,31 @@ main form button, main .modal-datas .data-form button, main .modal-notas .data-f
   color: white;
   font-size: 3vh;
   gap: 15px;
+  text-align: center;
 }
-main form button:hover, main .modal-datas .data-form button:hover, main .modal-notas .data-form button:hover {
+main form button:hover, main .modal-datas .data-form button:hover, main .modal-notas .data-form button:hover, main .modal-image .data-form button:hover, main form .btn-label:hover, main .modal-datas .data-form .btn-label:hover, main .modal-notas .data-form .btn-label:hover, main .modal-image .data-form .btn-label:hover {
   background-color: rgb(0, 255, 60);
 }
-main form > .imgPerfil, main .modal-datas .data-form > .imgPerfil, main .modal-notas .data-form > .imgPerfil {
+main form > .imgPerfil, main .modal-datas .data-form > .imgPerfil, main .modal-notas .data-form > .imgPerfil, main .modal-image .data-form > .imgPerfil {
   width: 50%;
   aspect-ratio: 1;
   border-radius: white;
   margin: auto;
   object-fit: cover;
 }
-main form.diferente div, main .modal-datas .diferente.data-form div, main .modal-notas .diferente.data-form div {
+main form.diferente div, main .modal-datas .diferente.data-form div, main .modal-notas .diferente.data-form div, main .modal-image .diferente.data-form div {
   display: flex;
   justify-content: space-between;
   gap: 5px;
 }
-main form.diferente div button, main .modal-datas .diferente.data-form div button, main .modal-notas .diferente.data-form div button {
+main form.diferente div button, main .modal-datas .diferente.data-form div button, main .modal-notas .diferente.data-form div button, main .modal-image .diferente.data-form div button {
   background-color: gray;
   width: 100%;
 }
-main form.diferente div button:first-child:hover, main .modal-datas .diferente.data-form div button:first-child:hover, main .modal-notas .diferente.data-form div button:first-child:hover {
+main form.diferente div button:first-child:hover, main .modal-datas .diferente.data-form div button:first-child:hover, main .modal-notas .diferente.data-form div button:first-child:hover, main .modal-image .diferente.data-form div button:first-child:hover {
   background-color: red;
 }
-main form.diferente div button:last-child:hover, main .modal-datas .diferente.data-form div button:last-child:hover, main .modal-notas .diferente.data-form div button:last-child:hover {
+main form.diferente div button:last-child:hover, main .modal-datas .diferente.data-form div button:last-child:hover, main .modal-notas .diferente.data-form div button:last-child:hover, main .modal-image .diferente.data-form div button:last-child:hover {
   background-color: green;
 }
 
@@ -293,7 +294,7 @@ main #perfil {
   height: auto;
   margin-top: 70px;
 }
-main .modal-datas, main .modal-notas {
+main .modal-datas, main .modal-notas, main .modal-image {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 100vh;
@@ -307,30 +308,31 @@ main .modal-datas, main .modal-notas {
   z-index: 1;
   visibility: visible;
 }
-main .modal-datas .cont-modal, main .modal-notas .cont-modal {
+main .modal-datas .cont-modal, main .modal-notas .cont-modal, main .modal-image .cont-modal {
   flex-direction: column;
   max-width: 50vw;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   gap: 10px;
-  height: 40vh;
+  margin-top: 90px;
+  height: auto;
   width: 25vw;
   background-color: white;
   flex-direction: column;
   transition: transform 0.3s ease, background-color 0.3 ease;
   transform: scaleY(1);
 }
-main .modal-datas .data-form, main .modal-notas .data-form {
+main .modal-datas .data-form, main .modal-notas .data-form, main .modal-image .data-form {
   display: flex;
   height: 100%;
   width: 100%;
 }
-main .modal-datas.modal-hidden, main .modal-notas.modal-hidden {
+main .modal-datas.modal-hidden, main .modal-notas.modal-hidden, main .modal-image.modal-hidden {
   background-color: transparent;
   visibility: hidden;
   transition: background-color 0.3s ease, visibility 0s 0.3s;
 }
-main .modal-datas.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal {
+main .modal-datas.modal-hidden .cont-modal, main .modal-notas.modal-hidden .cont-modal, main .modal-image.modal-hidden .cont-modal {
   transform: scaleY(0);
 }
 
@@ -372,7 +374,6 @@ select, .cont-note form .span-titles, .cont-note form h2 {
 .cont-note form button {
   background-color: var(--ColorAzul);
   font-size: 2vh;
-  max-width: 40vw;
   padding: 0.7rem;
   border-radius: 1vh;
   border: none;
@@ -500,8 +501,13 @@ select {
 }
 
 @media screen and (max-aspect-ratio: 4/5) {
+  html {
+    height: 100vh;
+    overflow: hidden;
+  }
   header {
     display: flex;
+    right: 0;
   }
   h1 {
     display: none;
@@ -567,6 +573,11 @@ select {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  #button-note {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
   }
 }
 .show-card {
@@ -646,6 +657,14 @@ select {
   to {
     width: 0;
     padding: 0;
+  }
+}
+@keyframes background {
+  0% {
+    transform: rotate();
+  }
+  100% {
+    transform: rotate();
   }
 }
 

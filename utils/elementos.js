@@ -62,8 +62,20 @@ modalNotes: document.querySelector(".modal-notas"),
 formModalNotes: document.querySelector(".modal-notas form"),
 titleNoteModified: document.getElementById("mod-note-title-input"),
 descriptionNoteModified: document.getElementById("mod-note-desc-input"),
-cancelNoteModified: document.getElementById("btn-cancel")
+cancelNoteModified: document.getElementById("btn-cancel"),
+
+// modal modified images
+
+modalPhoto:document.querySelector(".modal-image"),
+formModalPhoto:document.querySelector(".modal-image form"),
+btnChangeUrlPhoto: document.getElementById("btnchangeUrl"),
+btnChangeFilePhoto: document.getElementById("inputChangefile"),
+changeImagePreview: document.querySelector(".modal-image form img"),
+btnCancelChangeImage: document.getElementById("btnCancelImage"),
+
+
 }
+console.log(elements)
 // console.log(elements)
 
 export default elements

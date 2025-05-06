@@ -1,6 +1,11 @@
 @media screen and (max-aspect-ratio: 4/5) {
+    html{
+        height: 100vh;
+        overflow: hidden;
+    }
   header{
     display: flex;
+    right: 0;
   }
     h1 {
         display: none;
@@ -71,5 +76,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    #button-note{
+        background-color: blueviolet;
+        width: 100%;
+        display: flex;
     }
 }

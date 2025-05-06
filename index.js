@@ -2,7 +2,7 @@
 import elements from "./utils/elementos.js"
 import view_control from "./utils/controlador.js"
 import { register_user, enteruser } from "./utils/systemuser.js"
-import { changePhoto } from "./utils/photoSystem.js"
+import { aceptModifiedPhoto, cancelModifiedPhoto, changePhoto, changePhotoFile, changePhotoURL } from "./utils/photoSystem.js"
 import * as goTo from "./utils/system_simple_view.js"
 import { changeNoteState, createNote, filterNotes, changeNote, modifiedNote, cancelNoteModified } from "./utils/notesystem.js"
 import { saveDatas, cancelDatas, changeDatas, cancelModified, aceptModified} from "./utils/system_modified.js";
@@ -28,11 +28,20 @@ elements.btnDataCancel.addEventListener(
 
 elements.imgphoto.addEventListener("click", changePhoto)
 
+elements.btnCancelChangeImage.addEventListener("click",cancelModifiedPhoto)
+
+elements.btnChangeUrlPhoto.addEventListener("click",changePhotoURL)
+
+elements.formModalPhoto.addEventListener("submit", aceptModifiedPhoto)
+
+elements.btnChangeFilePhoto.addEventListener("change",changePhotoFile)
+
 elements.btnDatachange.addEventListener("click", changeDatas)
 
 elements.cancelModified.addEventListener("click", cancelModified)
 
 elements.formModalDatas.addEventListener("submit", aceptModified)
+
 
 elements.btnDataSave.addEventListener(
     "click", saveDatas)

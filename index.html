@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header id="header-h" class="presentacion">
+    <header id="header-h" class="">
         <div class="presentacion">
             <a href="#">
                 <img src="imagenes/trello.svg" alt="" id="img1">
@@ -95,7 +95,7 @@
                     <option style="color: red;" value="3">Incompletos</option>
                 </select>
                 <hr>
-                
+
             </div>
 
             <div id="notes" class="notes contenedorDeNotas">
@@ -189,15 +189,32 @@
                     <h2>Note modified</h2>
                     <label for="mod-note-title-input">
                         <span>title of the note</span>
-                        <input type="text" id="mod-note-title-input" required>
+                        <input type="text" id="mod-note-title-input" class="mod-note-title-inpu" required>
                     </label>
                     <label for="mod-note-desc-input">
                         <span>note description</span>
-                        <input type="text" id="mod-note-desc-input" required>
+                        <input type="text" id="mod-note-desc-input" class="mod-note-desc-inpu" required>
                     </label>
                     <div>
                         <button type="button" id="btn-cancel">Cancel</button>
                         <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="modal-image modal-hidden">
+            <div class="cont-modal">
+                <form class="data-form">
+                    <h2>change photo</h2>
+                    <button id="btnchangeUrl" type="button">URL</button>
+                    <label for="inputChangefile" class="btn-label">achieve</label>
+                    <input type="file" id="inputChangefile" accept="images/*" hidden>
+                    <img src="./imagenes/user.svg" alt="">
+                    <div>
+                        <button type="button" id="btnCancelImage">Cancel</button>
+                        <button type="submit">Update</button>
                     </div>
                 </form>
             </div>
