@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRELLO</title>
+  <script type="module" crossorigin src="/assets/index-DtZThaNu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CcWP-gxG.css">
+</head>
+
+<body>
+    <header id="header-h" class="">
+        <div class="presentacion">
+            <a href="#">
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20style='fill:%20rgba(0,%200,%200,%201);transform:%20;msFilter:;'%3e%3cpath%20d='M18.75%203H5.25A2.25%202.25%200%200%200%203%205.25v13.5A2.25%202.25%200%200%200%205.25%2021h13.5A2.25%202.25%200%200%200%2021%2018.75V5.25A2.25%202.25%200%200%200%2018.75%203zm-7.92%2013.635a1.08%201.08%200%200%201-1.08%201.08H6.42a1.08%201.08%200%200%201-1.08-1.08V6.42c0-.597.483-1.08%201.08-1.08h3.33c.596%200%201.08.483%201.08%201.08v10.215zm7.83-4.5a1.08%201.08%200%200%201-1.08%201.08h-3.33a1.08%201.08%200%200%201-1.08-1.08V6.42c0-.597.484-1.08%201.08-1.08h3.33c.597%200%201.08.483%201.08%201.08v5.715z'%3e%3c/path%3e%3c/svg%3e" alt="" id="img1">
+                <h1>TRELLO</h1>
+            </a>
+        </div>
+        <div class="perfil">
+            <label>
+                <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='currentColor'%20class='bi%20bi-list'%20viewBox='0%200%2016%2016'%3e%3cpath%20fill-rule='evenodd'%20d='M2.5%2012a.5.5%200%200%201%20.5-.5h10a.5.5%200%200%201%200%201H3a.5.5%200%200%201-.5-.5m0-4a.5.5%200%200%201%20.5-.5h10a.5.5%200%200%201%200%201H3a.5.5%200%200%201-.5-.5m0-4a.5.5%200%200%201%20.5-.5h10a.5.5%200%200%201%200%201H3a.5.5%200%200%201-.5-.5'/%3e%3c/svg%3e" alt="">
+                <input type="checkbox">
+            </label>
+            <div id="user-img">
+                <span class="nombreUser">Name person</span>
+                <img class="imgPerfil" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20style='fill:%20rgba(0,%200,%200,%201);transform:%20;msFilter:;'%3e%3cpath%20d='M12%202C6.579%202%202%206.579%202%2012s4.579%2010%2010%2010%2010-4.579%2010-10S17.421%202%2012%202zm0%205c1.727%200%203%201.272%203%203s-1.273%203-3%203c-1.726%200-3-1.272-3-3s1.274-3%203-3zm-5.106%209.772c.897-1.32%202.393-2.2%204.106-2.2h2c1.714%200%203.209.88%204.106%202.2C15.828%2018.14%2014.015%2019%2012%2019s-3.828-.86-5.106-2.228z'%3e%3c/path%3e%3c/svg%3e" alt="" id="img-user">
+                <ul>
+                    <li id="lis-confi">CONFIGURACION</li>
+                    <li id="lis-out">SALIR</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="formularios" class="contenedor show-card">
+            <form id="iniciar_sesion" class="forms">
+                <h2>INICIAR SESION</h2>
+                <label for="email">Correo </label>
+                <input type="text" id="email" placeholder="INGRESE CORREO" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="INGRESE CONTRASEÑA" required>
+                <button id="btn_sesion" type="submit">iniciar sesion</button>
+                <div id="error" style="color: red;"></div>
+                <a href="#" id="linktoReg">NO TENGO CUENTA</a> <!-- Error message display -->
+            </form>
+            <form id="registrarse" class="forms">
+                <h2>REGISTRARSE</h2>
+                <label for="name_reg">Name</label>
+                <input type="text" id="name_reg" placeholder="INGRESE SU NOMBRE" required>
+                <label for="Apellido_reg">Apellido</label>
+                <input type="text" id="Apellido_reg" placeholder="INGRESE SU APELLIDO" required>
+                <label for="edad_reg">Edad</label>
+                <input type="number" id="edad_reg" placeholder="INGRESE SU EDAD" required>
+                <label for="email_reg">Correo</label>
+                <input type="text" id="email_reg" placeholder="INGRESE SU CORREO" required>
+                <label for="password_reg">Contraseña</label>
+                <input type="password" id="password_reg" placeholder="INGRESE SU CONTRASEÑA" required>
+                <label for="confirm">Confirmar Contraseña</label>
+                <input type="password" id="confirm" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                <button id="btn_reg" type="submit">Registrarse</button>
+                <div id="errorregis" style="color: white;"></div>
+                <a href="#" id="linktoLogin">YA TENGO CUENTA</a>
+            </form>
+            <form id="perfil" class="editarPerfil forms">
+                <h2 id="h2-perfil"></h2>
+                <div id="class-profile-img">
+                    <img class="imgPerfil" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20style='fill:%20rgba(0,%200,%200,%201);transform:%20;msFilter:;'%3e%3cpath%20d='M12%202C6.579%202%202%206.579%202%2012s4.579%2010%2010%2010%2010-4.579%2010-10S17.421%202%2012%202zm0%205c1.727%200%203%201.272%203%203s-1.273%203-3%203c-1.726%200-3-1.272-3-3s1.274-3%203-3zm-5.106%209.772c.897-1.32%202.393-2.2%204.106-2.2h2c1.714%200%203.209.88%204.106%202.2C15.828%2018.14%2014.015%2019%2012%2019s-3.828-.86-5.106-2.228z'%3e%3c/path%3e%3c/svg%3e" id="change_img"></img>
+                </div>
+                <button type="button" id="btn_change" class="btn_perfiles">Modificar datos</button>
+                <button type="button" id="btn_cancelar" class="btn_perfiles">Cancelar</button>
+                <button type="button" id="btn_guardar" class="btn_perfiles">Guardar</button>
+            </form>
+        </div>
+        <div id="cont-notes" class="cont-note ">
+            <form id="form-notes" class="form-note show-note">
+                <h2>Hacer una anotacion</h2>
+                <label for="note-input">
+                    <span class="span-titles">titulo de la nota</span>
+                    <input type="text" id="note-input" required>
+                </label>
+                <label for="note-desc-input">
+                    <span class="span-titles">descripcion de la nota</span>
+                    <textarea id="note-desc-input"></textarea>
+                </label>
+                <button type="submit" class="button-notes" id="button-note">agregar una nota</button>
+            </form>
+            <div class="con-categorias">
+                <hr>
+                <select id="agruparNotas">
+                    <option style="color: blue;" value="0">Todas</option>
+                    <option style="color: rgb(0, 0, 0);" value="1">Pendiente</option>
+                    <option style="color: green;" value="2">Completados</option>
+                    <option style="color: red;" value="3">Incompletos</option>
+                </select>
+                <hr>
+
+            </div>
+
+            <div id="notes" class="notes contenedorDeNotas">
+                <!-- <div class="memo show-note">
+                    <div>
+                        <div class="headerNote">
+                            <strong>Title</strong>
+                            <div class="menuNote">
+
+                                <img src="imagenes/menu.svg" alt="options">
+                                <ul>
+                                    <li>modificar</li>
+                                    <li>borrar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h2>titulo</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, obcaecati dolores! Fugit
+                            voluptatem, sunt nulla cum consectetur fugiat pariatur voluptates dignissimos deleniti omnis
+                            aperiam in eos maiores eveniet? </p>
+                        <select style="color: orange;"
+                            onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color">
+                            <option style="color: orange;" value="1">pendiente</option>
+                            <option style="color: green;" value="2">completo</option>
+                            <option style="color: red;" value="3">incompleto</option>
+                        </select>
+
+                    </div> -->
+            </div>
+
+            <!-- <div class="memo">
+                    <div>
+                        <h2>titulo</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, obcaecati dolores! Fugit
+                            voluptatem, sunt nulla cum consectetur fugiat pariatur voluptates dignissimos deleniti omnis
+                            aperiam in eos maiores eveniet? </p>
+                        <select style="color: orange;"
+                            onchange="this.style.color = this.querySelector('option:nth-child('+this.value+')').style.color">
+                            <option style="color: orange;" value="1">pendiente</option>
+                            <option style="color: orchid;" value="2">completo</option>
+                            <option style="color: blue;" value="3">incompleto</option>
+                        </select>
+                    </div>
+                </div> -->
+        </div>
+        </div>
+        </div>
+        <div class="modal-datas modal-hidden">
+            <div class="cont-modal">
+                <form class="data-form diferente">
+                    <h2>Modificar datos</h2>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" id="name_mod" placeholder="INGRESE SU NOMBRE" required>
+                    </label>
+                    <label>
+                        <span>Apellido</span>
+                        <input type="text" id="Apellido_mod" placeholder="INGRESE SU APELLIDO" required>
+                    </label>
+                    <label>
+                        <span>Edad</span>
+                        <input type="number" id="edad_mod" placeholder="INGRESE SU EDAD" required>
+                    </label>
+                    <label>
+                        <span>Correo</span>
+                        <input type="text" id="email_mod" placeholder="INGRESE SU CORREO" required>
+                    </label>
+                    <label>
+                        <span>Contraseña anterior</span>
+                        <input type="password" id="passwordLast_mod" placeholder="INGRESE SU CONTRASEÑA" required>
+                    </label>
+                    <label>
+                        <span>nueva contraseña</span>
+                        <input type="password" id="new_contraseña" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                    </label>
+                    <label>
+                        <span>Confirmar Contraseña</span>
+                        <input type="password" id="confirm_contraseña" placeholder="VERIFIQUE SU CONTRASEÑA" required>
+                    </label>
+                    <div>
+                        <button type="button">Cancelar</button>
+                        <button type="submit">Modificar</button>
+                    </div>
+                </form>
+                <p class="error-p"></p>
+            </div>
+        </div>
+        <div class="modal-notas modal-hidden">
+            <div class="cont-modal cont-notes ">
+                <form id="formModificarNotas" class="diferente data-form">
+                    <h2>Note modified</h2>
+                    <label for="mod-note-title-input">
+                        <span>title of the note</span>
+                        <input type="text" id="mod-note-title-input" class="mod-note-title-inpu" required>
+                    </label>
+                    <label for="mod-note-desc-input">
+                        <span>note description</span>
+                        <input type="text" id="mod-note-desc-input" class="mod-note-desc-inpu" required>
+                    </label>
+                    <div>
+                        <button type="button" id="btn-cancel">Cancel</button>
+                        <button type="submit">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="modal-image modal-hidden">
+            <div class="cont-modal">
+                <form class="data-form">
+                    <h2>change photo</h2>
+                    <button id="btnchangeUrl" type="button">URL</button>
+                    <label for="inputChangefile" class="btn-label">achieve</label>
+                    <input type="file" id="inputChangefile" accept="images/*" hidden>
+                    <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20style='fill:%20rgba(0,%200,%200,%201);transform:%20;msFilter:;'%3e%3cpath%20d='M12%202C6.579%202%202%206.579%202%2012s4.579%2010%2010%2010%2010-4.579%2010-10S17.421%202%2012%202zm0%205c1.727%200%203%201.272%203%203s-1.273%203-3%203c-1.726%200-3-1.272-3-3s1.274-3%203-3zm-5.106%209.772c.897-1.32%202.393-2.2%204.106-2.2h2c1.714%200%203.209.88%204.106%202.2C15.828%2018.14%2014.015%2019%2012%2019s-3.828-.86-5.106-2.228z'%3e%3c/path%3e%3c/svg%3e" alt="">
+                    <div>
+                        <button type="button" id="btnCancelImage">Cancel</button>
+                        <button type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
